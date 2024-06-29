@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="./image/bookmark.png" />
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="py-2 text-center position-relative">Bookmarker</h1>
+            <div class="bookmark  w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h2 class="btitle">
+                    <i class="fa-solid fa-bookmark "></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="site-name d-flex flex-column justify-content-center w-100 ">
+                    <label for="bookmarkName" class="pb-2 fw-semibold">
+                        <i class="fa-solid fa-book-bookmark pe-2"></i>
+                        Site Name
+                    </label>
+                    <input oninput="validitionName()" type="text" class="form-control bshadow" id="bookmarkName" placeholder="Bookmark Name" >
+                </div>
+                <div class="site-url d-flex flex-column justify-content-center w-100 mt-4">
+                    <label for="bookmarkUrl" class="pb-2 fw-semibold">
+                        <i class="fa-solid fa-link pe-2"></i>
+                        Site URL
+                    </label>
+                    <input oninput="validitionUrl()" type="url" class="form-control bshadow" id="bookmarkUrl" placeholder="Bookmark URL" >
+                </div>
+                <div class="mt-4">
+                    <button onclick="addBook()" class="border-0 rounded-2 py-2 btn-submit px-5" id="submitBtn">Submit</button>
+                </div>
+            </div>
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                    <th>Index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tableDAta">
+                    <tr></tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div id="errorBox" class="error-box position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+          <div class="error-overlay position-absolute start-0 top-0 w-100 h-100 bg-black-50"></div>
+          <div class="box-content bg-white p-4 rounded-2 shadow-lg position-relative">
+            <header class="box-header w-100 d-flex justify-content-between align-items-center mb-4">
+              <div class="circles d-flex">
+                <span class="rounded-circle c-1 me-2"></span>
+                <span class="rounded-circle c-2 me-2"></span>
+                <span class="rounded-circle c-3 me-2"></span>
+              </div>
+              <button class="btn border-0" id="closeBtn">
+                <i class="fa-solid fa-xmark close fs-3"></i>
+              </button>
+            </header>
+            <p class="m-0 pb-2 valid">
+              Site Name or URL is not valid. Please follow the <br> rules below:
+            </p>
+            <ol class="rules list-unstyled m-0">
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i> Site name must contain at least 3 characters
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i> Site URL must be a valid one
+            </ol>
+          </div>
+        </div>
+        
+        
+
+    <script src="js/script.js"></script>
+</body>
+</html>
